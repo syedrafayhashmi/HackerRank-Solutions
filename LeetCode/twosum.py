@@ -1,8 +1,3 @@
-# Given nums = [2, 7, 11, 15], target = 9,
-
-# Because nums[0] + nums[1] = 2 + 7 = 9,
-# return [0, 1].
-
 class Solution(object):
     def twoSum(self, nums, target):
         """
@@ -10,4 +5,13 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        
+        sum = 0
+        for x in range(len(nums)):
+            for y in range(x+1,len(nums)):
+                sum = nums[x] + nums[y]
+                if sum == target:
+                    print([x,y])
+                else:
+                    continue 
+            
+Solution.twoSum(0, nums = [3, 2, 4], target = 6)
