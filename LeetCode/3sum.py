@@ -14,13 +14,15 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         sum = 0
-        for x in range(len(nums)):
-            for y in range(x+1,len(nums)):
-                for z in range(y+1,len(nums)):
+        out = []
+        for x in xrange(len(nums)):
+            for y in xrange(x+1,len(nums)):
+                for z in xrange(y+1,len(nums)):
                     sum = nums[x]+nums[y]+nums[z]
                     if sum == 0:
                         arr = sorted([nums[x],nums[y],nums[z]])
-                        print(arr)
-
+                        if arr not in out:
+                            out.append(arr)
+        return out
 
 Solution.threeSum(0, nums = [-1, 0, 1, 2, -1, -4])
